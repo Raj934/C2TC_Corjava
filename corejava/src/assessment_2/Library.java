@@ -6,21 +6,27 @@ public class Library {
    int Acc_num;
    String  Author;
    String Title;
+   int d;
    Scanner ob1 = new Scanner(System.in);
    
-    public void input()  throws  Exception
+    public void input()  
 	{
-    	 InputStreamReader r=new InputStreamReader(System.in);
-    		BufferedReader br=new BufferedReader(r);
+    	Scanner ob1 = new Scanner(System.in);
+    	
     	System.out.println("enter the Author of the book");
-		Author= br.readLine();
+		Author= ob1.nextLine();
 	    
-		System.out.println("enter the accession number of the book");
-		 Acc_num = ob1.nextInt();
+	
 		 
 		 System.out.println("enter the title of the book");
-		 Title= br.readLine();
-										
+		 Title= ob1.nextLine();
+
+         System.out.println("enter the accession number of the book");
+		 Acc_num = ob1.nextInt();
+			
+		 System.out.println("enter number of days late:");
+				
+		 d=ob1.nextInt();
 	}
   
        	
@@ -29,9 +35,8 @@ public class Library {
 
     void compute() 
     {
-    	System.out.println("enter number of days late:");
-    	int d=ob1.nextInt();
-    	int fine =5*d;
+    	
+		int fine =5*d;
     	
     	System.out.println("fine charged=Rs."+fine);
     }
@@ -45,7 +50,7 @@ public class Library {
 	}
 		
 
-	public static void main(String[] args) throws Exception
+	public static void main(String[] args)
 	{
 		// TODO Auto-generated method stub
    
@@ -53,10 +58,13 @@ public class Library {
 		
 		Library ob2 = new Library();
 		ob2.input();
-		ob2.display();
 		ob2.compute();
+		ob2.display();
 
 		
 	}
 
 }
+
+
+
