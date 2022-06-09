@@ -9,8 +9,9 @@ public class thro_w {
 
 		try
 		{
-			//ArithmeticException a=new ArithmeticException("hellow from throw"); 
-		throw new	ArithmeticException("hellow form throw");
+			ArithmeticException a=new ArithmeticException("hellow from throw"); 
+			throw a;
+		//throw new	ArithmeticException("hellow form throw");
 		}
 		catch(ArithmeticException a)
 		{
