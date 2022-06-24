@@ -25,7 +25,7 @@ public class sleep_therad implements Runnable {
 		sleep_therad a=new sleep_therad();
 	Thread	t=new Thread(a,"child ");
 	t.start();
-	System.out.println("number od active "+Thread.activeCount());
+	System.out.println("number of active "+Thread.activeCount());
 		a.m1();
 	}
 
