@@ -5,7 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Client {
+public class Client 
+{
 	
 
 	public static void main(String[] args) throws SQLException  
