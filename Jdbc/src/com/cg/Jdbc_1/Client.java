@@ -19,11 +19,38 @@ public class Client {
 		{
 			System.out.println("JDBC: Connection is established");
 		}
-		//GetEmployee();          //Retrieve Operation
-		//addEmployee();          //Create Operation
-		//UpdateEmployee();       //Update Operation
-		//DeleteEmployee();       //Delete Operation
-		RetrieveByIdEmployee();   //RetrieveById Operation
+		//GetEmployee();              //Retrieve Operation
+		//addEmployee();              //Create Operation
+		//UpdateEmployee();           //Update Operation
+		//DeleteEmployee();           //Delete Operation
+		//RetrieveByIdEmployee();     //RetrieveById Operation
+		addTable();                 //creating new table Operation
+		//addSchema();                //creating new Schema Operation
+		}
+	//creating new Schema Operation
+	private static void addSchema() throws SQLException {
+		Connection connection =DBUtil.getconnection();
+		Statement stmt = connection.createStatement();
+		String sqlinsert = "CREATE SCHEMA `rahul` ;";
+		int executeupdate = stmt.executeUpdate(sqlinsert);
+		if(executeupdate==1 ) {
+			System.out.println("Schema is created ");
+			}
+		}
+	//creating new table Operation
+	private static void addTable() throws SQLException {
+		Connection connection =DBUtil.getconnection();
+		Statement stmt = connection.createStatement();
+		String sqlinsert="CREATE TABLE `rahul`.`std` (\r\n"
+				+ "  `std_id` INT NOT NULL,\r\n"
+				+ "  `std_name` VARCHAR(45) NOT NULL,\r\n"
+				+ "  `std_age` INT NOT NULL,\r\n"
+				+ "  PRIMARY KEY (`std_id`));";
+		
+		int executeupdate = stmt.executeUpdate(sqlinsert);
+		if(executeupdate==1 ) {
+			System.out.println("Table is created ");
+			}
 		}
 	//Create Operation
 	private static void addEmployee() throws SQLException {
